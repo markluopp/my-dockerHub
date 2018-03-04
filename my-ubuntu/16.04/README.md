@@ -1,0 +1,2 @@
+- to build image: `docker build -t genghuiluo/my-ubuntu:16.04`
+- to create container: `docker run -it --rm genghuiluo/my-ubuntu:16.04`
