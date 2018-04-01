@@ -2,6 +2,20 @@
 
 > [ZooKeeper Docker Hub](https://hub.docker.com/_/zookeeper/)
 
+#### my-zk
+
+```
+docker build -t genghuiluo/my-zk:3.4.10 --rm=true .
+
+# standalone
+docker run -d --name zk-test genghuiluo/my-zk:3.4.10
+
+# cluster	
+docker run -d -e ZK_ID=1 -v /path/to/zoo.cfg:/opt/zookeeper/conf/zoo.cfg --name zk-test1 genghuiluo/my-zk:3.4.10
+
+# To test if service running, bin/zkCli.sh -server 127.0.0.1:2181
+```
+
 > [ref: 分布式学习(1) ---- 初识Zookeeper](https://zhuanlan.zhihu.com/p/24996631)
 
 zookeeper与分布式有着千丝万缕的联系。它虽然源自于hadoop，但目前zookeeper脱离hadoop的范畴开发分布式应用越来越普遍
