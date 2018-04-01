@@ -34,8 +34,13 @@ docker run username/repository:tag                   # Run image from a registry
 
 	utilize `docker save & load` for image and `docker export & import` for container
 	```
-	docker save otter-manager:1.0 | gzip > ~/otter-manager-1.0.tar.gz
-	gzip -cd otter-manager-1.0.tar.gz | docker load
+	docker save xxx:tags | gzip > ~/xxx-tags.tar.gz
+	gzip -cd xxx-tags.tar.gz | docker load
 	```
 
-2. `docker rmi <your_name>/<image_name>:<tag>` remove a tag `docker rmi <image_id>` remove a image
+2. `docker rmi <your_name>/<image_name>:<tag>` remove a tag; `docker rmi <image_id>` remove a image
+3. Dockerfile: [RUN vs CMD vs ENTRYPOINT?](http://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/)
+4. To remove [dangling images](http://www.projectatomic.io/blog/2015/07/what-are-docker-none-none-images/): `docker images -f "dangling=true" -q|xargs docker rmi`
+5. Get container IP: `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id`
+6. utilize `docker logs` for debugging
+
