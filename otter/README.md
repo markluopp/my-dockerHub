@@ -113,5 +113,9 @@ http://blog.csdn.net/lijingkuan/article/details/50380272
 	
 	lib/ojdbc14-10.2.0.3.0.jar 替换为 lib/ojdbc6.jar
 	```
-
+11. 跨机房同步部署问题
+- (数据源)配置内网的ip即可，对应机房的node拿到配置后，可以基于内网ip访问。manager不需要连通数据库ip
+- 可以在添加机器，增加public ip
+- 在任务定义时选择想要启用public ip的机器，高级参数里打开外部ip通讯.
+- 数据源配置都是配置内网ip即可，因为数据源都是各自地域的node机器访问本机房的，只要你任务定义时源和目标的node机器选对即可
 
