@@ -172,3 +172,5 @@ public static void main(String[] args) throws Exception {
         }
     }
 ```
+
+#### [ZooKeeper集群及Observer配置方法](https://www.36nu.com/post/213.html)
