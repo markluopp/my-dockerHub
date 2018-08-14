@@ -4,8 +4,6 @@
 
 ### [Download Docker engine & Search Docker image](https://store.docker.com/)
 
-![](https://www.docker.com/sites/default/files/Container%402x.png)
-
 1. [Docker CE vs Docker EE](https://docs.docker.com/install/overview/)
 2. [Install using repository](https://docs.docker.com/install/linux/docker-ce/centos/#install-using-the-repository) vs Install from a package
 
