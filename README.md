@@ -2,7 +2,13 @@
 
 > https://hub.docker.com/search/?q=genghuiluo
 
-### [Download Docker engine.](https://store.docker.com/)
+### [Download Docker engine & Search Docker image](https://store.docker.com/)
+
+![](https://www.docker.com/sites/default/files/Container%402x.png)
+
+1. [Docker CE vs Docker EE](https://docs.docker.com/install/overview/)
+2. [Install using repository](https://docs.docker.com/install/linux/docker-ce/centos/#install-using-the-repository) vs Install from a package
+
 
 ### [Dockerfile reference.](https://docs.docker.com/engine/reference/builder/#usage)
 
@@ -34,9 +40,14 @@ docker run username/repository:tag                   # Run image from a registry
 
 	utilize `docker save & load` for image and `docker export & import` for container
 	```
-	docker save xxx:tags | gzip > ~/xxx-tags.tar.gz
+	docker save xxx_image_name:tags | gzip > ~/xxx-tags.tar.gz
 	gzip -cd xxx-tags.tar.gz | docker load
+
+	docker export xxx_container_name | gzip > ~/xxx.tar.gz
+	gzip -cd xxx.tar.gz | docker import - xxx_image_name:tags # exported container & re-import as image
 	```
+
+	> [What is the difference between import and load in Docker?](https://stackoverflow.com/questions/36925261/what-is-the-difference-between-import-and-load-in-docker)
 
 2. `docker rmi <your_name>/<image_name>:<tag>` remove a tag; `docker rmi <image_id>` remove a image
 3. Dockerfile: [RUN vs CMD vs ENTRYPOINT?](http://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/)
