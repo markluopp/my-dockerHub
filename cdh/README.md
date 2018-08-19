@@ -12,7 +12,21 @@
 	-p 8888:8888 (Hue)
 	-d (runs the container in the background)
 
-	# Cloudera Manager is not started by default. To see options for starting it, run: /home/cloudera/cloudera-manager [--express]
+	# Cloudera Manager is not started by default. To see options for starting it, run cmd below inside container
+	/home/cloudera/cloudera-manager [--express]
+	
+	access CM via http://<container/host_ip>:7180
+
+	Username: cloudera
+	Password: cloudera
+	
+	# cm service
+	service cloudera-scm-server status
+	service cloudera-scm-agent hard_stop_confirmed
+	service cloudera-scm-agent clean_start
+	
+	# 主机的 NTP 服务未响应时钟偏差请求
+	cp -f /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
 	```
 
 2. [forked: cloudera offical CDH cluster docker image](https://github.com/2L-knowledgebase/clusterdock)
